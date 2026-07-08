@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiniGPT HF</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="app">
+    <section class="panel">
+      <div class="brand">🤗</div>
+      <h1>MiniGPT HF</h1>
+      <p>Chat educativo conectado a Hugging Face mediante un backend Node.js.</p>
+      <button id="clearBtn">Limpiar chat</button>
+
+      <div class="settings">
+
+        <div class="field">
+          <label for="systemPrompt">Modo del asistente</label>
+          <select id="systemPrompt">
+            <option value="web">Profesor de desarrollo web</option>
+            <option value="english">Tutor de inglés</option>
+            <option value="debug">Depurador de errores</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="model">Modelo de IA</label>
+          <select id="model">
+            <option value="meta-llama/Llama-3.1-8B-Instruct">Llama 3.1</option>
+            <option value="deepseek-ai/DeepSeek-R1">DeepSeek R1</option>
+            <option value="google/gemma-3-12b-it">Gemma 3</option>
+            <option value="Qwen/Qwen2.5-72B-Instruct">Qwen 2.5</option>
+            <option value="deepseek-ai/DeepSeek-V3">DeepSeek V3</option>
+            // algunos modelos pueden tener complicaciones de compatibilidad por lo que se ha cambiado algunos modelos.
+          </select>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <section class="chat">
+      <div id="messages" class="messages"></div>
+
+      <form id="chatForm" class="composer">
+        <textarea id="prompt" placeholder="Escribe tu pregunta..." rows="2"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
